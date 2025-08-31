@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Floating icon animations */
+.animate-float { animation: float 3s ease-in-out infinite alternate; }
+.animate-float-reverse { animation: float 3s ease-in-out infinite alternate-reverse; }
+.animate-float-slow { animation: float 5s ease-in-out infinite alternate; }
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-16px); }
+}
+
+/* Project card shimmer and line clamp */
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
