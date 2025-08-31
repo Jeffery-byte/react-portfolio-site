@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code, Database, BarChart3, TrendingUp, MapPin, Calendar, Star, Users, Award, Zap } from 'lucide-react';
-import { SiPython, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiFastapi, SiNodedotjs, SiGooglecloud, SiDocker, SiPostgresql, SiRedis, SiSupabase, SiMysql, SiVercel, SiPandas, SiNumpy, SiScikitlearn, SiGit, SiGithub, SiTailwindcss, SiAuth0 } from 'react-icons/si';
+import React from 'react';
+import { Github, Linkedin, Mail, ExternalLink, MapPin, Calendar, Star, Users, Award, Zap } from 'lucide-react';
+import { SiPython, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiFastapi, SiNodedotjs, SiGooglecloud, SiDocker, SiPostgresql, SiRedis, SiSupabase, SiVercel, SiPandas, SiNumpy, SiScikitlearn, SiGit, SiGithub, SiTailwindcss, SiAuth0 } from 'react-icons/si';
 
 const Portfolio = () => {
   // SkillProgress type for state
@@ -15,31 +15,6 @@ const Portfolio = () => {
     "System Design": number;
   }
 
-  const [skillProgress, setSkillProgress] = useState<SkillProgress>({
-    Python: 0,
-    "React/JS": 0,
-    PostgreSQL: 0,
-    FastAPI: 0,
-    "Machine Learning": 0,
-    "System Design": 0,
-  });
-  
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-    const timer = setTimeout(() => {
-      setSkillProgress({
-        Python: 90,
-        "React/JS": 85,
-        PostgreSQL: 80,
-        FastAPI: 75,
-        "Machine Learning": 70,
-        "System Design": 65,
-      });
-    }, 800);
-    return () => clearTimeout(timer);
-  }, []);
 
 
 // Type definitions for props (move outside component for scope)
@@ -131,21 +106,7 @@ const ProjectCard = ({ title, description, tech, metrics, demoLink, githubLink, 
   </div>
 );
 
-const SkillBar = ({ skill, percentage, index }: SkillBarProps) => (
-  <div className="mb-6 transform transition-all duration-700 ease-out" style={{ animationDelay: `${index * 200}ms` }}>
-    <div className="flex justify-between items-center mb-3">
-      <span className="text-slate-300 text-sm font-semibold tracking-wide">{skill}</span>
-      <span className="text-cyan-400 text-sm font-bold">{percentage}%</span>
-    </div>
-    <div className="w-full bg-slate-700/50 rounded-full h-3 relative overflow-hidden shadow-inner">
-      <div
-        className="bg-gradient-to-r from-cyan-400 to-emerald-400 h-3 rounded-full transition-all duration-1000 ease-in-out shadow-lg"
-        style={{ width: `${percentage}%` }}
-      ></div>
-      <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-    </div>
-  </div>
-);
+
 
 
 
@@ -160,7 +121,7 @@ const SkillBar = ({ skill, percentage, index }: SkillBarProps) => (
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-emerald-500/5 animate-pulse"></div>
       </div>
 
-      <div className={`container mx-auto px-6 py-12 relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <div className="container mx-auto px-6 py-12 relative z-10 transition-all duration-1000 opacity-100 translate-y-0">
         {/* Enhanced Header */}
   <header id="about" className="text-center mb-20">
           <div className="mb-12 flex flex-col items-center">
@@ -482,10 +443,10 @@ const SkillBar = ({ skill, percentage, index }: SkillBarProps) => (
   <footer id="contact" className="text-center">
           <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-lg rounded-2xl p-12 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-400/20">
             <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              Let's Build Something Amazing Together
+              Let&apos;s Build Something Amazing Together
             </h2>
             <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Ready to bring resilience, creativity, and collaborative spirit to innovative software engineering teams. Let's create something extraordinary together.
+              Ready to bring resilience, creativity, and collaborative spirit to innovative software engineering teams. Let&apos;s create something extraordinary together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-400/30 transition-all duration-300 text-white transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400">
