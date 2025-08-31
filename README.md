@@ -32,7 +32,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - The resume PDF is not tracked in this repo. To enable the resume view/download feature, add your PDF as `public/Jeff_Owusu_final.pdf`.
 
 ## 🌐 Live Demo
-- [Your Vercel/Netlify/Custom Link Here](#)
+- [(https://react-portfolio-site-tau.vercel.app/)](#)
 
 ## 📬 Contact
 - Email: [owusuagyemangjeffery18@gmail.com](mailto:owusuagyemangjeffery18@gmail.com)
